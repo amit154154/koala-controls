@@ -28,6 +28,18 @@ Key native modules:
 
 The phone UI embeds `body.html` inside `index.html`: keep them synchronized. `tv.js` uses the same typed server command path as native TV controls. Do not add arbitrary code-execution endpoints.
 
+## One shared host
+
+```mermaid
+flowchart LR
+  Pad[USB macro pad] --> Host[Mini Keyboard.app · shared Swift host]
+  Keys[MacBook shortcuts] --> Host
+  Phone[Koala Remote · Safari] -->|Local HTTPS and approved pairing| Host
+  TV[Koala TV.app · launcher] --> Host
+  Host --> Apps[Apps, windows and media]
+  Host --> UI[TV home and Mac controls]
+```
+
 ## Build and test
 
 ```sh

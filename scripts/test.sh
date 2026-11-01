@@ -6,6 +6,13 @@ swiftc -Onone -swift-version 5 -parse-as-library -module-cache-path build/module
 build/tests/fullscreen
 swiftc -Onone -swift-version 5 -parse-as-library -module-cache-path build/module-cache   Sources/TVDisplayAutomation.swift Sources/RemoteProtocol.swift Tests/TVConnectionRegression.swift -o build/tests/connection
 build/tests/connection
+sources=()
+for source in Sources/*.swift; do
+  [[ "$source" == Sources/App.swift ]] || sources+=("$source")
+done
+swiftc -Onone -whole-module-optimization -swift-version 5 -parse-as-library -module-cache-path build/module-cache \
+  "${sources[@]}" Tests/PublicDefaultsRegression.swift -o build/tests/public-defaults
+build/tests/public-defaults
 node Tests/phone-tv-av.test.js Resources/PhoneRemote
 node Tests/phone-chords.test.js Resources/PhoneRemote
 node --test VSCodeExtension/test/*.test.js

@@ -16,7 +16,10 @@ enum AdventureRules {
     static func canonical(_ id: String) -> String { id == "grove_chrome_viz" ? "grove_viz" : id }
     static func threshold(_ level: Int, player: Bool) -> Int { let l = max(1, min(10_000, level)); return (player ? 20 : 5) * l * (l - 1) }
     static func level(_ xp: Int, player: Bool) -> Int {
-        max(1, Int((1 + sqrt(1 + 4 * Double(max(0,xp)) / Double(player ? 20 : 5))) / 2))
+        let factor: Double = player ? 20.0 : 5.0
+        let uses = Double(max(0, xp))
+        let root = (1.0 + sqrt(1.0 + 4.0 * uses / factor)) / 2.0
+        return max(1, Int(root))
     }
     static func tier(_ level: Int) -> Int { level >= 10 ? 4 : level >= 5 ? 3 : level >= 3 ? 2 : level >= 2 ? 1 : 0 }
     static func title(_ level: Int) -> String { level >= 15 ? "Keeper of the cosmic grove" : level >= 10 ? "Koala of questionable power" : level >= 5 ? "Certified chaos coordinator" : level >= 3 ? "Branch manager" : level >= 2 ? "Eucalyptus enthusiast" : "Tiny paws, big plans" }
