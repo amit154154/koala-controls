@@ -1,0 +1,18 @@
+{
+  "name": "koala-workspace",
+  "displayName": "Koala Workspace",
+  "description": "Your two Claude chats, GPU monitor and working shell in one shortcut.",
+  "version": "1.0.0",
+  "publisher": "koala-local",
+  "engines": { "vscode": "^1.100.0" },
+  "categories": ["Other"],
+  "extensionKind": ["ui"],
+  "main": "./extension.js",
+  "activationEvents": ["onCommand:koalaWorkspace.setup"],
+  "capabilities": { "untrustedWorkspaces": { "supported": false }, "virtualWorkspaces": false },
+  "contributes": {
+    "commands": [{ "command": "koalaWorkspace.setup", "title": "Set Up Claude Workspace", "category": "Koala", "icon": "$(layout)" }],
+    "keybindings": [{ "command": "koalaWorkspace.setup", "key": "ctrl+alt+shift+8", "mac": "ctrl+alt+cmd+8", "when": "isWorkspaceTrusted && !inQuickOpen" }]
+  },
+  "scripts": { "test": "node --test test/*.test.js" }
+}

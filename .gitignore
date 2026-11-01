@@ -1,0 +1,21 @@
+build/
+release/
+*.log
+.DS_Store
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+*.vsix
+*.zip
+*.dmg
+# Never commit a user's settings, credentials, or local identity.
+settings.json
+peers.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.mobileconfig
+.env
+.env.*

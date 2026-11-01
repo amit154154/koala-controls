@@ -1,0 +1,21 @@
+name: Build and checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  macos:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Focused regression checks
+        run: ./scripts/test.sh
+      - name: Build both apps (no installation)
+        env:
+          KOALA_SIGN_IDENTITY: '-'
+        run: ./build.sh --build-only

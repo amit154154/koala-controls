@@ -1,0 +1,26 @@
+'use strict';
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const elements=new Map(),sent=[];
+function element(id){if(!elements.has(id))elements.set(id,{id,dataset:{},value:'',innerHTML:'',textContent:'',disabled:false,hidden:false,open:false,attrs:{},listeners:{},classList:{toggle(){}},addEventListener(e,f){this.listeners[e]=f;},setAttribute(k,v){this.attrs[k]=v;}});return elements.get(id);}
+const root={querySelector:element,querySelectorAll:()=>[]};
+const context={window:{},document:{activeElement:null},console};vm.runInNewContext(fs.readFileSync(process.argv[2]+'/tv.js','utf8'),context);
+const tv=context.window.KoalaTV.create({root,command:(kind,args)=>{sent.push({kind,...args});return Promise.resolve();},showView(){},sheet(){},closeSheet(){},status(){}});
+const id='58B6B818-324A-40E6-B649-14EAB967A183';
+const state={accessibility:true,busy:false,tv:{active:true,audio:{outputs:[{id,name:'MacBook <Speakers>'}],selected:id,name:'MacBook Speakers',volume:.42,canVolume:true,canMute:true,muted:false,headphones:[]},captions:{supported:true,enabled:false,source:'chrome',language:'en-US',size:'medium',position:'bottom',style:'forest',languages:[{id:'en-US',name:'English'}]}}};
+tv.update(state,true);assert.equal(element('#kr-tv-audio-volume').value,42);assert.equal(element('#kr-tv-audio-value').textContent,'42%');assert.equal(element('#kr-tv-cc').disabled,false);assert.match(element('#kr-tv-audio-output').innerHTML,/&lt;Speakers&gt;/);
+element('#kr-tv-cc').onclick();assert.equal(sent.at(-1).control,'captions');assert.equal(sent.at(-1).enabled,true);
+element('#kr-tv-audio-mute').onclick();assert.equal(sent.at(-1).muted,true);
+element('#kr-tv-audio-volume').onchange({target:{value:'65'}});assert.equal(sent.at(-1).value,.65);
+element('#kr-tv-cc-size').onchange({target:{value:'large'}});assert.equal(sent.at(-1).size,'large');assert.equal(sent.at(-1).control,'captionSettings');
+element('#kr-tv-audio-output').onchange({target:{value:id}});assert.equal(sent.at(-1).output,id);
+state.tv.audio.canVolume=false;state.tv.audio.canMute=false;tv.update(state,true);assert.equal(element('#kr-tv-audio-volume').disabled,true);assert.equal(element('#kr-tv-audio-hardware').hidden,false);
+state.tv.captions.enabled=true;tv.update(state,true);assert.equal(element('#kr-tv-cc').attrs['aria-pressed'],'true');element('#kr-tv-cc').onclick();assert.equal(sent.at(-1).enabled,false);
+state.tv.canBlankMac=true;state.tv.macScreenBlanked=false;state.tv.automaticTV=true;state.tv.automaticTVName='AAA';tv.update(state,true);
+assert.equal(element('#kr-tv-mac-screen').disabled,false);element('#kr-tv-mac-screen').onclick();assert.equal(sent.at(-1).control,'macScreen');assert.equal(sent.at(-1).blank,true);
+state.tv.macScreenBlanked=true;tv.update(state,true);assert.equal(element('#kr-tv-mac-screen').textContent,'Show Mac screen');element('#kr-tv-mac-screen').onclick();assert.equal(sent.at(-1).blank,false);
+element('#kr-tv-auto-connect').onclick();assert.equal(sent.at(-1).control,'automaticTV');assert.equal(sent.at(-1).enabled,false);
+state.tv.canResume=true;state.tv.fullscreen=false;tv.update(state,true);assert.equal(element('#kr-tv-fullscreen').disabled,false);assert.equal(element('#kr-tv-fullscreen').textContent,'⛶ Full screen');element('#kr-tv-fullscreen').onclick();assert.equal(sent.at(-1).control,'fullscreen');
+state.tv.fullscreen=true;tv.update(state,true);assert.equal(element('#kr-tv-fullscreen').textContent,'⛶ Exit full screen');assert.equal(element('#kr-tv-fullscreen').attrs['aria-pressed'],'true');
+state.tv.busy=true;tv.update(state,true);assert.equal(element('#kr-tv-fullscreen').disabled,true);state.tv.busy=false;
+tv.update(state,false);assert.equal(element('#kr-tv-fullscreen').disabled,true);assert.equal(element('#kr-tv-mac-screen').disabled,true);assert.equal(element('#kr-tv-auto-connect').disabled,true);assert.equal(element('#kr-tv-cc').disabled,true);assert.equal(element('#kr-tv-audio-output').disabled,true);
+console.log('Phone TV AV checks passed: safe output rendering, typed controls, volume, CC toggles, caption style, hardware limits, Mac screen recovery, automatic TV toggle, and offline disabling.');

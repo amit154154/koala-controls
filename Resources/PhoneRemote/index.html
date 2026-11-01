@@ -1,0 +1,138 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#141d18"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="apple-touch-icon" href="/art/icon-192.png"><link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/tv.css"><title>Koala Remote</title></head><body><section class="kr-pair" id="pair-screen">
+  <img src="/art/icon-192.png" alt="Koala Remote" />
+  <h1>Your Mac, a tap away.</h1>
+  <p>Open <strong>Mini Keyboard → Phone remote</strong> on your Mac. Enter its pairing code, then approve this phone there.</p>
+  <form id="pair-form">
+    <label for="phone-name">Phone name</label><input id="phone-name" value="iPhone 11" maxlength="40" autocomplete="off" required />
+    <label for="pair-code">Six-digit code</label><input id="pair-code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" placeholder="000000" required />
+    <button type="submit" id="pair-button">Pair with my Mac</button>
+  </form>
+  <p id="pair-status" role="status" aria-live="polite">Checking your connection…</p>
+  <small>For a dedicated remote, use Safari’s Share menu → Add to Home Screen. Keep this phone and your Mac on the same Wi-Fi.</small>
+</section>
+<div id="koala-remote-concept">
+  <div class="kr-stage">
+    <section class="kr-phone" aria-label="Koala Remote phone concept">
+      <header class="kr-header">
+        <img data-art="companion" class="kr-avatar" alt="" />
+        <div class="kr-brand"><strong>Koala Remote</strong><button type="button" class="kr-connection cursor-interaction" data-view="settings"><span class="kr-dot"></span><span id="kr-connection-label">Your Mac</span><i data-lucide="chevron-down" aria-hidden="true"></i></button></div>
+        <button type="button" class="kr-icon-button cursor-interaction" id="kr-help" aria-label="Show shortcut help"><i data-lucide="circle-help" aria-hidden="true"></i></button>
+      </header>
+      <div class="kr-context"><span id="kr-setup-label">Home setup</span><span id="kr-context-displays">MacBook + iPad</span></div>
+      <div class="kr-disconnected" id="kr-offline" hidden><i data-lucide="wifi-off" aria-hidden="true"></i><div><strong>Mac unavailable</strong><span>Wake your Mac and check the Wi-Fi connection.</span></div><button type="button" class="kr-small-button cursor-interaction" id="kr-retry">Retry</button></div>
+
+      <main class="kr-content" id="kr-content">
+        <section id="kr-pad" class="kr-pane" aria-label="Shortcut pad">
+          <div class="kr-section-head"><h2>Your shortcut pad</h2><span>Same keys. Same actions.</span></div>
+          <div class="kr-key-grid" id="kr-key-grid"></div>
+          <div class="kr-corner-heading"><h3>Window parkour</h3><span>Two-key combos, or tap a corner</span></div>
+          <div class="kr-corner-grid" role="group" aria-label="Window corners"></div>
+          <p class="kr-caption">Hold either pad key, then tap its partner. Keys 9–12 run on release when used alone.</p>
+          <div class="kr-workspace-destination"><i data-lucide="laptop" aria-hidden="true"></i><span id="kr-workspace-rule">Workspaces open in MacBook Spaces</span><button type="button" class="kr-inline-button cursor-interaction" id="kr-workspace-target">Change</button></div>
+          <div class="kr-volume"><button type="button" class="kr-icon-button cursor-interaction" id="kr-mute" aria-label="Mute Mac volume"><i data-lucide="volume-2" aria-hidden="true"></i></button><label for="kr-volume-range" class="kr-sr">Mac volume</label><input id="kr-volume-range" type="range" min="0" max="100" value="35" aria-label="Mac volume" /><output id="kr-volume-value">35%</output></div>
+          <div class="kr-tab-controls"><button type="button" class="kr-control cursor-interaction" data-command="Previous tab"><i data-lucide="chevron-left" aria-hidden="true"></i>Previous tab</button><button type="button" class="kr-control cursor-interaction" data-command="Next tab">Next tab<i data-lucide="chevron-right" aria-hidden="true"></i></button></div>
+          <div class="kr-spaces" role="group" aria-label="Mac desktops">
+            <div class="kr-space-label"><strong>Mac desktops</strong><span>Desktops &amp; full-screen apps</span></div>
+            <div class="kr-space-controls"><button type="button" class="kr-control cursor-interaction" data-command="Previous Space"><i data-lucide="chevron-left" aria-hidden="true"></i>Previous Space</button><button type="button" class="kr-control cursor-interaction" data-command="Next Space">Next Space<i data-lucide="chevron-right" aria-hidden="true"></i></button></div>
+          </div>
+        </section>
+
+        <section id="kr-media" class="kr-pane" aria-label="Media controls" hidden>
+          <div class="kr-section-head"><h2>A little downtime</h2><span>Choose something to open.</span></div>
+          <button type="button" class="kr-target cursor-interaction" id="kr-media-target"><i data-lucide="tablet" aria-hidden="true"></i><span><small>Open media on</small><strong id="kr-media-target-name">iPad · automatic</strong></span><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+          <div class="kr-media-grid" id="kr-media-grid"></div>
+          <div class="kr-section-head kr-open-heading"><h3 id="kr-open-title">On your iPad</h3><span id="kr-open-count">2 windows</span></div>
+          <div class="kr-display-preview" id="kr-media-preview" aria-label="Media windows on the selected display"></div>
+          <p class="kr-caption" id="kr-media-rule">A new service joins the layout. Existing ones are reused.</p>
+          <div class="kr-split-controls"><button type="button" class="kr-control cursor-interaction" id="kr-tile">Arrange together</button><button type="button" class="kr-control cursor-interaction" id="kr-focus">Focus selected</button></div>
+        </section>
+
+        <section id="kr-remote" class="kr-pane" aria-label="Mac remote controls" hidden>
+          <div class="kr-section-head"><h2>From the couch</h2><span>Point, click, scroll and type.</span></div>
+          <button type="button" class="kr-focused-app cursor-interaction" id="kr-focus-app"><img data-art="chrome" alt="" /><span><small>Controlling</small><strong id="kr-active-app">Google Chrome</strong></span><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+          <div class="kr-spaces" role="group" aria-label="Mac desktops">
+            <div class="kr-space-label"><strong>Mac desktops</strong><span>Desktops &amp; full-screen apps</span></div>
+            <div class="kr-space-controls"><button type="button" class="kr-control cursor-interaction" data-command="Previous Space"><i data-lucide="chevron-left" aria-hidden="true"></i>Previous Space</button><button type="button" class="kr-control cursor-interaction" data-command="Next Space">Next Space<i data-lucide="chevron-right" aria-hidden="true"></i></button></div>
+          </div>
+          <button type="button" class="kr-trackpad cursor-interaction" id="kr-trackpad" aria-label="Trackpad. Drag to move the pointer; tap to click."><span class="kr-trackpad-pointer" aria-hidden="true">↗</span><span class="kr-trackpad-caption">Tap to click<br /><small>Two fingers to scroll</small></span></button>
+          <div class="kr-split-controls"><button type="button" class="kr-control cursor-interaction" data-command="Left click">Left click</button><button type="button" class="kr-control cursor-interaction" data-command="Right click">Right click</button></div>
+          <div class="kr-textbox"><label for="kr-type">Type on your Mac</label><textarea id="kr-type" rows="2" placeholder="Write a search or a short message…"></textarea><div><span>Inserts text without pressing Return</span><button type="button" class="kr-send cursor-interaction" id="kr-send">Send text</button></div></div>
+          <div class="kr-modifier-controls"><button type="button" class="kr-control cursor-interaction" data-command="Escape">Esc</button><button type="button" class="kr-control cursor-interaction" data-command="Return">Return</button><button type="button" class="kr-control cursor-interaction" data-command="Undo">Undo</button></div>
+        </section>
+
+        <section id="kr-tv" class="kr-pane" aria-label="Koala TV remote" hidden>
+          <div class="kr-tv-intro"><img src="/art/tv-lounge.png" alt="Koala relaxing on a couch"><div><small id="kr-tv-session">Start TV on your Mac</small><h2 id="kr-tv-now">Your couch is calling.</h2></div></div>
+          <button type="button" class="kr-target" id="kr-tv-target"><span aria-hidden="true">▣</span><span><small>TV display</small><strong id="kr-tv-display">Automatic external display</strong></span><span>⌄</span></button>
+          <div class="kr-tv-top"><button class="kr-control kr-tv-home" type="button" data-tv="home">⌂ Home</button><button class="kr-control" type="button" data-tv="back">↶ Back</button><button class="kr-control" type="button" data-tv="resume" id="kr-tv-resume">Resume</button></div>
+
+          <div class="kr-tv-mac-screen"><button type="button" class="kr-control kr-wide" id="kr-tv-mac-screen">Blank Mac screen</button><p class="kr-caption" id="kr-tv-mac-screen-note">The Mac screen returns when TV ends or disconnects.</p><button type="button" class="kr-inline-button" id="kr-tv-auto-connect">Automatic TV</button></div>
+          <details class="kr-tv-av" id="kr-tv-av">
+            <summary><span>◖ Audio &amp; Captions</span><span id="kr-tv-av-status">Sound &amp; live text</span></summary>
+            <div class="kr-tv-av-body">
+              <div class="kr-tv-av-head"><h3>Live captions</h3><button type="button" class="kr-control" id="kr-tv-cc" aria-pressed="false">CC off</button></div>
+              <p class="kr-caption" id="kr-tv-cc-status" role="status">Recognized on your Mac.</p>
+              <label for="kr-tv-cc-source">Listen to</label><select id="kr-tv-cc-source"><option value="chrome">Chrome / GDN audio</option><option value="appleTV">Apple TV audio</option><option value="spotify">Spotify audio</option></select>
+              <p class="kr-caption" id="kr-tv-cc-scope">Chrome audio includes other Chrome tabs. Pause other media for clear captions.</p>
+              <label for="kr-tv-cc-language">Spoken language</label><select id="kr-tv-cc-language"><option value="en-US">English (United States)</option></select>
+              <div class="kr-tv-av-pair"><label>Text size<select id="kr-tv-cc-size"><option value="small">Small</option><option value="medium">Medium</option><option value="large">Large</option></select></label><label>Position<select id="kr-tv-cc-position"><option value="bottom">Bottom</option><option value="top">Top</option></select></label></div>
+              <label for="kr-tv-cc-style">Caption style</label><select id="kr-tv-cc-style"><option value="forest">Forest glass</option><option value="contrast">Black background</option></select>
+              <button type="button" class="kr-control kr-wide" data-tv="captionPreview">Preview captions on TV</button><p class="kr-caption">Finished phrases appear together after a short buffer. On-device speech to text, with no microphone or saved transcript.</p>
+              <hr><div class="kr-tv-av-head"><h3>Sound output</h3><button type="button" class="kr-inline-button" data-tv="audioRefresh">Refresh</button></div>
+              <label for="kr-tv-audio-output" class="kr-sr">Sound output</label><select id="kr-tv-audio-output"></select>
+              <div class="kr-tv-av-volume"><button type="button" class="kr-control" id="kr-tv-audio-mute">Mute</button><label for="kr-tv-audio-volume" class="kr-sr">Output volume</label><input id="kr-tv-audio-volume" type="range" min="0" max="100" step="1"><output id="kr-tv-audio-value">0%</output></div>
+              <p class="kr-caption" id="kr-tv-audio-hardware" hidden>This output uses its own volume controls. Use the TV or speaker remote.</p>
+              <h3>Your AirPods &amp; headphones</h3><div id="kr-tv-headphones"></div><p class="kr-caption" id="kr-tv-audio-status" role="status"></p>
+              <button type="button" class="kr-control kr-wide" data-tv="audioSettings">Open Bluetooth settings on Mac</button>
+            </div>
+          </details>
+          <div class="kr-section-head"><h3>Continue watching &amp; playing</h3><button class="kr-inline-button" type="button" data-tv="refreshOpen">Refresh</button></div><div id="kr-tv-open"></div><p class="kr-caption" id="kr-tv-open-note"></p>
+          <button class="kr-control kr-wide kr-tv-add" type="button" id="kr-tv-add-media">＋ Add media or switch service</button>
+          <div class="kr-tv-dpad" role="group" aria-label="TV navigation"><button type="button" class="kr-tv-up" data-tv="up" aria-label="Up">⌃</button><button type="button" class="kr-tv-left" data-tv="left" aria-label="Left">‹</button><button type="button" class="kr-tv-select" data-tv="select">Select</button><button type="button" class="kr-tv-right" data-tv="right" aria-label="Right">›</button><button type="button" class="kr-tv-down" data-tv="down" aria-label="Down">⌄</button></div>
+          <div class="kr-tv-transport"><button class="kr-control" type="button" data-tv="previous" aria-label="Seek back">↶</button><button class="kr-control" type="button" data-tv="playPause" aria-label="Space / play pause">⏯</button><button class="kr-control" type="button" data-tv="next" aria-label="Seek forward">↷</button></div>
+          <p class="kr-caption">Playback uses Space and arrow keys in the TV app. Select the video first if the service needs it.</p>
+          <button class="kr-control kr-tv-fullscreen" type="button" id="kr-tv-fullscreen" aria-pressed="false">⛶ Full screen</button>
+          <div class="kr-tv-subcontrols"><button class="kr-control" type="button" data-tv="shiftTab">Previous control</button><button class="kr-control" type="button" data-tv="tab">Next control</button><button class="kr-control" type="button" data-tv="focus">Focus one</button></div>
+          <button class="kr-control kr-wide" type="button" id="kr-tv-trackpad">↗ Trackpad &amp; keyboard</button>
+          <p class="kr-caption" id="kr-tv-message" role="status">Tap Home to start.</p>
+          <div class="kr-section-head"><h3>Watching now</h3><span id="kr-tv-view-mode">Open another service to split the TV.</span></div>
+          <div id="kr-tv-watching"></div><div class="kr-split-controls"><button class="kr-control" type="button" data-tv="share" id="kr-tv-share">▥ Share screen</button><button class="kr-control" type="button" data-tv="focus" id="kr-tv-focus">▣ Focus one</button></div>
+          <div class="kr-section-head"><h3>Your services</h3><span>Adds to your screen</span></div><div class="kr-tv-services" id="kr-tv-services"></div>
+          <div class="kr-section-head"><h3>Your PS3 shelf</h3><button class="kr-inline-button" type="button" data-tv="refresh">Refresh shelf</button></div><div id="kr-tv-games"></div>
+          <p class="kr-caption">Your existing RPCS3 setup stays unchanged. Controller setup can wait until you have it with you.</p>
+          <p class="kr-caption" id="kr-tv-power">Connect the Mac to power for closed-lid use.</p><p class="kr-caption">Connect and approve your TV before closing the lid. Keep the Mac awake and unlocked on the same Wi-Fi. TV mode cannot unlock or wake a sleeping Mac.</p>
+          <button class="kr-control kr-wide kr-tv-session-end" type="button" data-tv="exit" id="kr-tv-end">End TV session</button>
+        </section>
+
+        <section id="kr-grove" class="kr-pane" aria-label="Grove adventure" hidden>
+          <div class="kr-passport" id="kr-passport"></div>
+          <h3>Your mastery field guide</h3>
+          <p class="kr-caption">Each function grows with you. Levels 2 / 3 / 5 / 10 unlock Leaf trail, Star burst, Golden orbit and Cosmic grove. One successful use earns one XP.</p>
+          <div id="kr-mastery"></div><h3>Recent shortcut clicks</h3>
+          <p class="kr-caption">The complete history stays on your Mac. No ordinary typing is recorded.</p>
+          <ul id="kr-activity"></ul>
+        </section>
+        <section id="kr-settings" class="kr-pane" aria-label="Connection and preferences" hidden>
+          <div class="kr-section-head"><h2>Your connection</h2><span>One Mac, everywhere you work.</span></div>
+          <div class="kr-paired"><i data-lucide="laptop" aria-hidden="true"></i><div><strong>Your Mac</strong><span id="kr-paired-label">Paired · connected locally</span></div><span class="kr-dot"></span></div>
+          <div class="kr-setting-row"><span>Mac connection</span><span id="kr-connected">Connected</span></div>
+          <div class="kr-setting-row"><span>iPad display</span><span id="kr-ipad">Connected</span></div>
+          <div class="kr-setting-row"><span>Detected setup</span><span id="kr-desk">Home · mobile</span></div>
+          <div class="kr-setting-row"><label for="kr-reactions">Koala reactions</label><select id="kr-reactions"><option value="phone">On the phone</option><option value="mac">On the Mac</option><option value="off">Off</option></select></div>
+          <div class="kr-setting-row"><label for="kr-sound">Tap sounds · MapleStory</label><input id="kr-sound" type="checkbox" /></div>
+          <div class="kr-setting-row"><label for="kr-awake">Keep open while in use</label><input id="kr-awake" type="checkbox" checked /></div>
+          <div class="kr-setting-row"><label for="kr-reduced">Reduce motion</label><input id="kr-reduced" type="checkbox" /></div>
+          <button type="button" class="kr-control kr-wide cursor-interaction" id="kr-pairing">Pair another phone</button>
+          <p class="kr-caption">Pairing and permission settings live in Mini Keyboard on your Mac.</p>
+        </section>
+      </main>
+
+      <div class="kr-status" id="kr-status" role="status" aria-live="polite"><i data-lucide="check" aria-hidden="true"></i><span>Connecting to your Mac…</span></div>
+      <div class="kr-reaction-slot">      <div class="kr-reaction" id="kr-reaction" aria-hidden="true"><img data-art="companion" alt="" /><span>✓</span></div>
+</div>
+      <nav class="kr-nav" aria-label="Remote screens"><button type="button" data-view="pad" class="cursor-interaction is-current" aria-current="page"><i data-lucide="grid-3x3" aria-hidden="true"></i>Pad</button><button type="button" data-view="media" class="cursor-interaction"><i data-lucide="play" aria-hidden="true"></i>Media</button><button type="button" data-view="remote" class="cursor-interaction"><i data-lucide="mouse-pointer-2" aria-hidden="true"></i>Remote</button><button type="button" data-view="tv" class="cursor-interaction"><i aria-hidden="true">▣</i>TV</button><button type="button" data-view="grove" class="cursor-interaction"><i aria-hidden="true">✦</i>Grove</button></nav>
+      <div id="kr-level-up" class="kr-level-up" role="status" aria-live="polite" hidden></div><div class="kr-home-indicator" aria-hidden="true"></div>
+      <div class="kr-sheet-backdrop" id="kr-sheet-backdrop" hidden><section class="kr-sheet" role="dialog" aria-modal="true" aria-labelledby="kr-sheet-title"><header><h3 id="kr-sheet-title">Choose a display</h3><button type="button" class="kr-icon-button cursor-interaction" id="kr-sheet-close" aria-label="Close"><i data-lucide="x" aria-hidden="true"></i></button></header><div id="kr-sheet-body"></div></section></div>
+    </section>
+  </div>
+</div>
+<script src="/keys.js"></script><script src="/adventure.js"></script><script src="/tv.js"></script><script src="/app.js"></script></body></html>

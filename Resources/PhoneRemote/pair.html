@@ -1,0 +1,12 @@
+<section class="kr-pair" id="pair-screen">
+  <img src="/art/icon-192.png" alt="Koala Remote" />
+  <h1>Your Mac, a tap away.</h1>
+  <p>Open <strong>Mini Keyboard → Phone remote</strong> on your Mac. Enter its pairing code, then approve this phone there.</p>
+  <form id="pair-form">
+    <label for="phone-name">Phone name</label><input id="phone-name" value="iPhone 11" maxlength="40" autocomplete="off" required />
+    <label for="pair-code">Six-digit code</label><input id="pair-code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" placeholder="000000" required />
+    <button type="submit" id="pair-button">Pair with my Mac</button>
+  </form>
+  <p id="pair-status" role="status" aria-live="polite">Checking your connection…</p>
+  <small>For a dedicated remote, use Safari’s Share menu → Add to Home Screen. Keep this phone and your Mac on the same Wi-Fi.</small>
+</section>

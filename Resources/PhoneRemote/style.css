@@ -1,0 +1,183 @@
+
+#koala-remote-concept { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "Avenir Next", sans-serif; }
+#koala-remote-concept .kr-preview-label { text-align:center; color:light-dark(#526557,#b5c8b9); font-size:12px; margin:4px 0 14px; }
+#koala-remote-concept .kr-stage { padding:16px 8px 22px; }
+#koala-remote-concept .kr-phone { --kr-bg:light-dark(#eaf0e7,#141d18); --kr-panel:light-dark(#f7faf5,#1e2a24); --kr-text:light-dark(#203b2c,#edf2eb); --kr-muted:light-dark(#53675a,#a8b8ad); --kr-line:light-dark(#cbd7ca,#35483d); --kr-mint:light-dark(#2c714e,#8ecead); --kr-tint:light-dark(#d6e7d8,#293e30); --kr-gold:light-dark(#916719,#e6be69); position:relative; width:100%; max-width:414px; margin:auto; padding:16px 16px 8px; box-sizing:border-box; border:1px solid var(--kr-line); border-radius:30px; background:var(--kr-bg); color:var(--kr-text); box-shadow:0 16px 40px #06170c22; overflow:hidden; }
+#koala-remote-concept .kr-phone * { box-sizing:border-box; }
+#koala-remote-concept [hidden] { display:none!important; }
+#koala-remote-concept button,#koala-remote-concept input,#koala-remote-concept select,#koala-remote-concept textarea { font:inherit; }
+#koala-remote-concept button { -webkit-tap-highlight-color:transparent; color:inherit; }
+#koala-remote-concept button:disabled { opacity:.42; cursor:not-allowed; }
+#koala-remote-concept button:focus-visible,#koala-remote-concept textarea:focus-visible,#koala-remote-concept input:focus-visible,#koala-remote-concept select:focus-visible { outline:3px solid var(--kr-gold); outline-offset:3px; }
+#koala-remote-concept .kr-header { display:flex; align-items:center; gap:10px; }
+#koala-remote-concept .kr-avatar { width:44px; height:44px; border-radius:50%; object-fit:cover; }
+#koala-remote-concept .kr-brand { flex:1; min-width:0; }
+#koala-remote-concept .kr-brand>strong { font-size:21px; font-weight:750; letter-spacing:-.7px; }
+#koala-remote-concept .kr-connection { border:0; background:none; padding:4px 0; display:flex; align-items:center; gap:5px; font-size:12px; color:var(--kr-muted); min-height:25px; }
+#koala-remote-concept .kr-connection svg { width:12px; height:12px; }
+#koala-remote-concept .kr-dot { width:7px; height:7px; border-radius:50%; background:var(--kr-mint); display:inline-block; flex-shrink:0; }
+#koala-remote-concept .kr-icon-button { width:44px; height:44px; border:0; border-radius:12px; background:transparent; display:inline-flex; justify-content:center; align-items:center; flex-shrink:0; }
+#koala-remote-concept .kr-icon-button svg { width:21px; height:21px; }
+#koala-remote-concept .kr-context { display:flex; justify-content:space-between; align-items:center; gap:8px; padding:9px 0 12px; font-size:11px; color:var(--kr-muted); border-bottom:1px solid var(--kr-line); }
+#koala-remote-concept .kr-context span:first-child { color:var(--kr-mint); font-weight:650; }
+#koala-remote-concept .kr-content { min-height:580px; }
+#koala-remote-concept .kr-section-head { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px; margin:16px 0 10px; }
+#koala-remote-concept .kr-section-head h2,#koala-remote-concept .kr-section-head h3 { font-size:16px; letter-spacing:-.3px; margin:0; font-weight:650; }
+#koala-remote-concept .kr-section-head span { font-size:11px; color:var(--kr-muted); }
+#koala-remote-concept .kr-key-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+#koala-remote-concept .kr-key { position:relative; border:1px solid var(--kr-line); padding:0 0 8px; border-radius:15px; background:var(--kr-panel); overflow:hidden; display:flex; flex-direction:column; align-items:center; min-width:0; min-height:99px; transition:transform .12s,border-color .12s; }
+#koala-remote-concept .kr-key:active { transform:scale(.96); border-color:var(--kr-mint); }
+#koala-remote-concept .kr-key>img { width:100%; height:68px; object-fit:cover; object-position:50% 40%; }
+#koala-remote-concept .kr-key-number { position:absolute; top:5px; left:6px; display:flex; justify-content:center; align-items:center; width:21px; height:21px; background:#14251ee6; color:#edf2eb; border-radius:7px; font-size:11px; font-weight:700; }
+#koala-remote-concept .kr-key-title { font-size:12px; font-weight:650; line-height:1.2; padding:7px 3px 0; text-align:center; }
+#koala-remote-concept .kr-key-apps { position:absolute; right:5px; top:5px; display:flex; gap:3px; background:#edf2ebe6; padding:2px; border-radius:5px; }
+#koala-remote-concept .kr-key-apps img { width:14px; height:14px; object-fit:contain; }
+#koala-remote-concept .kr-minimize-mark { position:absolute; top:36px; color:#fff; background:#14251edb; padding:0 13px 4px; border-radius:5px; font-size:20px; }
+#koala-remote-concept .kr-workspace-destination { display:flex; align-items:center; gap:6px; min-height:39px; color:var(--kr-muted); font-size:11px; }
+#koala-remote-concept .kr-workspace-destination svg { width:14px; height:14px; flex-shrink:0; }
+#koala-remote-concept .kr-workspace-destination span { flex:1; }
+#koala-remote-concept .kr-inline-button { background:transparent; border:0; color:var(--kr-mint); min-height:44px; padding:2px 0 2px 6px; font-size:12px; }
+#koala-remote-concept .kr-volume { display:flex; align-items:center; gap:9px; border-top:1px solid var(--kr-line); }
+#koala-remote-concept input[type=range] { width:100%; min-width:0; accent-color:var(--kr-mint); height:44px; }
+#koala-remote-concept .kr-volume output { font-size:12px; min-width:33px; color:var(--kr-muted); font-variant-numeric:tabular-nums; }
+#koala-remote-concept .kr-tab-controls,.kr-split-controls,.kr-modifier-controls { display:flex; gap:8px; }
+#koala-remote-concept .kr-control { min-height:44px; padding:10px 9px; flex:1; background:var(--kr-panel); border:1px solid var(--kr-line); border-radius:11px; font-size:12px; font-weight:600; display:flex; justify-content:center; align-items:center; gap:6px; }
+#koala-remote-concept .kr-control svg { width:16px; height:16px; }
+#koala-remote-concept .kr-status { min-height:40px; display:flex; align-items:center; gap:6px; font-size:11px; color:var(--kr-mint); padding:10px 0; line-height:1.35; }
+#koala-remote-concept .kr-status svg { width:14px; height:14px; flex-shrink:0; }
+#koala-remote-concept .kr-nav { display:flex; border-top:1px solid var(--kr-line); padding-top:6px; gap:8px; }
+#koala-remote-concept .kr-nav button { border:0; background:transparent; color:var(--kr-muted); border-radius:12px; padding:8px; flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; font-size:11px; min-height:52px; }
+#koala-remote-concept .kr-nav button svg { width:20px; height:20px; }
+#koala-remote-concept .kr-nav button.is-current { background:var(--kr-tint); color:var(--kr-mint); font-weight:700; }
+#koala-remote-concept .kr-home-indicator { width:100px; height:4px; background:var(--kr-muted); border-radius:4px; margin:12px auto 0; opacity:.45; }
+#koala-remote-concept .kr-target { border:1px solid var(--kr-line); border-radius:13px; background:var(--kr-panel); display:flex; align-items:center; gap:10px; width:100%; padding:10px 12px; margin-bottom:12px; text-align:left; }
+#koala-remote-concept .kr-target>span { flex:1; }
+#koala-remote-concept .kr-target small { display:block; font-size:11px; color:var(--kr-muted); margin-bottom:3px; }
+#koala-remote-concept .kr-target strong { display:block; font-size:14px; }
+#koala-remote-concept .kr-target svg { width:20px; height:20px; }
+#koala-remote-concept .kr-media-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+#koala-remote-concept .kr-service { display:flex; align-items:center; gap:9px; min-height:56px; padding:10px; border:1px solid var(--kr-line); background:var(--kr-panel); border-radius:12px; text-align:left; }
+#koala-remote-concept .kr-service img,.kr-service-symbol { width:30px; height:30px; object-fit:contain; flex-shrink:0; }
+#koala-remote-concept .kr-service-symbol { display:grid; place-items:center; border-radius:7px; background:var(--kr-tint); font-size:14px; font-weight:800; }
+#koala-remote-concept .kr-service span:last-child { font-size:12px; font-weight:600; }
+#koala-remote-concept .kr-service:last-child { grid-column:1/-1; }
+#koala-remote-concept .kr-service:last-child small { display:block; color:var(--kr-muted); font-size:11px; font-weight:400; margin-top:2px; }
+#koala-remote-concept .kr-service[aria-pressed=true] { border-color:var(--kr-mint); background:var(--kr-tint); }
+#koala-remote-concept .kr-open-heading { margin-top:18px; }
+#koala-remote-concept .kr-display-preview { display:grid; grid-template-columns:repeat(2,1fr); gap:3px; background:var(--kr-line); padding:5px; border-radius:11px; min-height:82px; }
+#koala-remote-concept .kr-display-preview button { border:0; border-radius:6px; padding:12px 3px; min-height:64px; background:var(--kr-panel); font-size:11px; line-height:1.4; }
+#koala-remote-concept .kr-display-preview button[aria-pressed=true] { background:var(--kr-tint); box-shadow:inset 0 0 0 1px var(--kr-mint); }
+#koala-remote-concept .kr-display-preview button img { width:22px; height:22px; display:block; margin:0 auto 4px; object-fit:contain; }
+#koala-remote-concept .kr-display-preview button:last-child:nth-child(odd) { grid-column:1/-1; }
+#koala-remote-concept .kr-caption { color:var(--kr-muted); font-size:11px; line-height:1.5; margin:9px 0 12px; }
+#koala-remote-concept .kr-focused-app { display:flex; gap:10px; align-items:center; width:100%; text-align:left; background:var(--kr-panel); border:1px solid var(--kr-line); border-radius:12px; padding:10px; }
+#koala-remote-concept .kr-focused-app img { width:30px; height:30px; }
+#koala-remote-concept .kr-focused-app span { flex:1; }
+#koala-remote-concept .kr-focused-app strong,.kr-focused-app small { display:block; }
+#koala-remote-concept .kr-focused-app small { font-size:11px; color:var(--kr-muted); margin-bottom:3px; }
+#koala-remote-concept .kr-focused-app strong { font-size:13px; }
+#koala-remote-concept .kr-trackpad { display:block; width:100%; height:220px; background:var(--kr-panel); border:1px solid var(--kr-line); border-radius:20px; position:relative; margin:12px 0 8px; touch-action:none; user-select:none; cursor:crosshair; }
+#koala-remote-concept .kr-trackpad-caption { position:absolute; bottom:20px; left:0; right:0; text-align:center; font-size:13px; color:var(--kr-muted); pointer-events:none; }
+#koala-remote-concept .kr-trackpad-caption small { display:block; margin-top:4px; font-size:11px; }
+#koala-remote-concept .kr-trackpad-pointer { position:absolute; left:48%; top:32%; color:var(--kr-mint); pointer-events:none; }
+#koala-remote-concept .kr-trackpad-pointer svg { width:25px; height:25px; }
+#koala-remote-concept .kr-textbox { margin:17px 0 12px; }
+#koala-remote-concept .kr-textbox label { display:block; font-size:13px; font-weight:650; margin-bottom:8px; }
+#koala-remote-concept textarea { display:block; width:100%; background:var(--kr-panel); color:var(--kr-text); border:1px solid var(--kr-line); border-radius:11px; padding:11px; font-size:16px; resize:vertical; }
+#koala-remote-concept textarea::placeholder { color:var(--kr-muted); font-size:13px; }
+#koala-remote-concept .kr-textbox>div { display:flex; align-items:center; gap:8px; margin-top:7px; }
+#koala-remote-concept .kr-textbox>div>span { flex:1; font-size:11px; line-height:1.4; color:var(--kr-muted); }
+#koala-remote-concept .kr-send { min-height:44px; padding:9px 12px; border:0; background:var(--kr-mint); color:var(--kr-bg); font-size:12px; border-radius:11px; font-weight:700; }
+#koala-remote-concept .kr-paired { display:flex; gap:12px; align-items:center; padding:16px 0; }
+#koala-remote-concept .kr-paired>svg { width:32px; height:32px; color:var(--kr-mint); }
+#koala-remote-concept .kr-paired>div { flex:1; }
+#koala-remote-concept .kr-paired strong { display:block; font-size:15px; }
+#koala-remote-concept .kr-paired span:not(.kr-dot) { display:block; font-size:11px; margin-top:4px; color:var(--kr-muted); }
+#koala-remote-concept .kr-setting-row { display:flex; justify-content:space-between; align-items:center; gap:8px; min-height:56px; border-top:1px solid var(--kr-line); font-size:13px; }
+#koala-remote-concept .kr-setting-row input { accent-color:var(--kr-mint); width:22px; height:22px; }
+#koala-remote-concept .kr-setting-row select { max-width:58%; background:var(--kr-panel); color:var(--kr-text); border:1px solid var(--kr-line); padding:8px; border-radius:8px; font-size:12px; min-height:44px; }
+#koala-remote-concept .kr-wide { width:100%; margin-top:14px; }
+#koala-remote-concept .kr-sheet-backdrop { position:absolute; inset:0; z-index:5; background:#06150eb8; display:flex; align-items:flex-end; }
+#koala-remote-concept .kr-sheet { width:100%; background:var(--kr-bg); padding:18px 18px 28px; border-radius:25px 25px 0 0; box-shadow:0 -10px 40px #0003; }
+#koala-remote-concept .kr-sheet header { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:12px; }
+#koala-remote-concept .kr-sheet h3 { margin:0; font-size:18px; }
+#koala-remote-concept .kr-choice { display:flex; align-items:center; gap:10px; padding:12px; min-height:55px; border:1px solid var(--kr-line); border-radius:12px; background:var(--kr-panel); text-align:left; width:100%; margin-top:8px; font-size:14px; }
+#koala-remote-concept .kr-choice span { flex:1; }
+#koala-remote-concept .kr-choice small { display:block; margin-top:4px; font-size:11px; color:var(--kr-muted); }
+#koala-remote-concept .kr-help-art { width:96px; height:96px; border-radius:15px; float:left; margin:0 14px 9px 0; }
+#koala-remote-concept .kr-help-copy { font-size:14px; line-height:1.55; margin:0 0 12px; }
+#koala-remote-concept .kr-hotkey { display:inline-block; padding:6px 10px; font-size:13px; border:1px solid var(--kr-line); border-radius:8px; color:var(--kr-gold); }
+#koala-remote-concept .kr-disconnected { background:var(--kr-panel); display:flex; align-items:center; gap:8px; padding:10px; border:1px solid var(--kr-line); border-radius:11px; margin-top:12px; }
+#koala-remote-concept .kr-disconnected div { flex:1; }
+#koala-remote-concept .kr-disconnected strong { font-size:13px; }
+#koala-remote-concept .kr-disconnected span { font-size:11px; line-height:1.4; display:block; margin-top:4px; color:var(--kr-muted); }
+#koala-remote-concept .kr-small-button { border:0; background:var(--kr-tint); color:var(--kr-mint); border-radius:8px; min-height:44px; padding:8px; font-size:12px; }
+#koala-remote-concept .kr-reaction { position:absolute; right:20px; bottom:125px; display:none; pointer-events:none; z-index:3; }
+#koala-remote-concept .kr-reaction img { width:66px; height:66px; border:2px solid var(--kr-mint); border-radius:50%; }
+#koala-remote-concept .kr-reaction span { position:absolute; bottom:0; right:-4px; background:var(--kr-mint); color:var(--kr-bg); font-size:14px; border-radius:50%; padding:3px 6px; }
+#koala-remote-concept .kr-reaction.is-playing { display:block; animation:kr-hop .48s ease-out both; }
+#koala-remote-concept .kr-sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+@keyframes kr-hop { 0%{opacity:0;transform:translateY(12px) scale(.85)} 35%{opacity:1;transform:translateY(-8px) scale(1)} 70%{opacity:1;transform:translateY(0)} 100%{opacity:0;transform:translateY(3px)} }
+@media(prefers-reduced-motion:reduce) { #koala-remote-concept .kr-reaction.is-playing { animation:none; } #koala-remote-concept .kr-key { transition:none; } }
+@media(max-width:380px) { #koala-remote-concept .kr-phone { padding:14px 10px 8px; border-radius:23px; } #koala-remote-concept .kr-stage { padding:10px 0; } #koala-remote-concept .kr-key-title { font-size:11px; } #koala-remote-concept .kr-key { min-height:103px; } #koala-remote-concept .kr-key-grid { gap:6px; } #koala-remote-concept .kr-service { padding:8px; gap:6px; } #koala-remote-concept .kr-service span:last-child { font-size:11px; } #koala-remote-concept .kr-key-apps img { width:12px; height:12px; } }
+
+html{color-scheme:dark}body{margin:0;background:#141d18;-webkit-text-size-adjust:100%;touch-action:manipulation}button{cursor:pointer}#koala-remote-concept .kr-stage{padding:0}#koala-remote-concept .kr-phone{max-width:520px;border:0;border-radius:0;box-shadow:none;padding-top:max(14px,env(safe-area-inset-top));padding-bottom:max(10px,env(safe-area-inset-bottom));overflow:visible}#koala-remote-concept .kr-content{min-height:0}#koala-remote-concept .kr-nav{position:sticky;bottom:0;background:var(--kr-bg);z-index:3;padding-bottom:env(safe-area-inset-bottom)}#koala-remote-concept .kr-sheet-backdrop{position:fixed;z-index:10}#koala-remote-concept .kr-sheet{max-width:520px;margin:auto auto 0;max-height:85dvh;overflow-y:auto}#koala-remote-concept .kr-reaction{position:relative;right:auto;bottom:auto;width:160px;height:112px;margin:-8px auto 0;overflow:hidden}#koala-remote-concept .kr-reaction img{width:160px;height:127px;border:0;border-radius:12px;object-fit:contain}#koala-remote-concept .kr-reaction.is-playing{animation:none}#koala-remote-concept .kr-reaction span{display:none}#koala-remote-concept .kr-home-indicator{display:none}.kr-pair{padding:30px 22px;max-width:414px;margin:auto;color:#edf2eb}.kr-pair img{width:88px;border-radius:22px}.kr-pair h1{font-size:29px;margin:17px 0 6px}.kr-pair p{font-size:14px;line-height:1.5;color:#a8b8ad}.kr-pair label{display:block;margin-top:20px;font-size:13px}.kr-pair input{display:block;width:100%;box-sizing:border-box;padding:14px;background:#1e2a24;border:1px solid #35483d;border-radius:12px;color:#edf2eb;font-size:17px;margin-top:8px}.kr-pair button{margin-top:20px;width:100%;padding:15px;border:0;border-radius:12px;background:#8ecead;color:#141d18;font-size:16px;font-weight:700}.kr-pair #pair-status{min-height:40px}.kr-pair small{font-size:12px;line-height:1.5;display:block;color:#a8b8ad}#koala-remote-concept .kr-disconnected button{min-width:48px}#koala-remote-concept button[aria-busy=true]{opacity:.6}#koala-remote-concept .kr-caption{font-size:12px}#koala-remote-concept [data-lucide]{display:inline-block;font-style:normal;min-width:16px;text-align:center}#koala-remote-concept .kr-reaction-slot{min-height:36px;pointer-events:none}#koala-remote-concept .kr-textbox textarea{direction:auto}@media(orientation:landscape) and (max-height:550px){#koala-remote-concept .kr-phone{max-width:850px}#koala-remote-concept .kr-key-grid{grid-template-columns:repeat(6,minmax(0,1fr))}#koala-remote-concept .kr-media-grid{grid-template-columns:repeat(4,minmax(0,1fr))}#koala-remote-concept .kr-service:last-child{grid-column:auto}#koala-remote-concept .kr-trackpad{height:150px}}
+#koala-remote-concept .kr-phone{--kr-bg:#141d18;--kr-panel:#1e2a24;--kr-text:#edf2eb;--kr-muted:#a8b8ad;--kr-line:#35483d;--kr-mint:#8ecead;--kr-tint:#293e30;--kr-gold:#e6be69}body{font-family:-apple-system,BlinkMacSystemFont,Arial,sans-serif}button:disabled{opacity:.45}#koala-remote-concept .kr-reaction-slot{height:50px;position:relative}#koala-remote-concept .kr-reaction{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:100px;margin:0}#koala-remote-concept .kr-status{position:relative;z-index:1}
+
+#koala-remote-concept .kr-reaction-slot{height:100px}#koala-remote-concept .kr-reaction{top:0;bottom:auto;height:100px;width:126px}#koala-remote-concept .kr-reaction img{width:126px;height:100px}
+
+#koala-remote-concept .kr-spaces{margin:14px 0 10px;padding-top:12px;border-top:1px solid var(--kr-line)}#koala-remote-concept .kr-space-label{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:9px;font-size:12px;color:var(--kr-muted)}#koala-remote-concept .kr-space-label strong{color:var(--kr-mint);font-weight:650}#koala-remote-concept .kr-space-controls{display:flex;gap:8px}#koala-remote-concept .kr-space-controls .kr-control{min-height:46px}
+
+/* Window parkour and the grove passport share the established forest palette. */
+#koala-remote-concept .kr-corner-heading{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:18px}
+#koala-remote-concept .kr-corner-heading h3{font-size:14px;margin:0 0 10px}
+#koala-remote-concept .kr-corner-heading span{font-size:10px;color:var(--kr-muted)}
+#koala-remote-concept .kr-corner-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+#koala-remote-concept .kr-corner{padding:10px 3px;border:1px solid var(--kr-line);border-radius:12px;background:var(--kr-panel);color:var(--kr-text);min-height:84px;display:flex;flex-direction:column;align-items:center;gap:5px}
+#koala-remote-concept .kr-corner b{font-size:23px;color:var(--kr-mint)}
+#koala-remote-concept .kr-corner span{font-size:11px}#koala-remote-concept .kr-corner small{font-size:10px;color:var(--kr-muted)}
+#koala-remote-concept [data-chord-key]{touch-action:none}
+#koala-remote-concept .kr-passport{padding:18px 0 22px;border-bottom:1px solid var(--kr-line)}
+#koala-remote-concept .kr-passport-head{display:flex;gap:12px;align-items:center}
+#koala-remote-concept .kr-passport-head img{width:98px;height:98px;object-fit:contain;border-radius:18px}
+#koala-remote-concept .kr-passport h2{font-size:20px;margin:0 0 8px}
+#koala-remote-concept .kr-passport strong{font-size:29px;color:var(--kr-gold);font-weight:800}
+#koala-remote-concept .kr-passport p{font-size:12px;margin:6px 0 14px;color:var(--kr-muted)}
+#koala-remote-concept progress{display:block;width:100%;height:7px;border:0;border-radius:9px;overflow:hidden;background:var(--kr-panel);accent-color:var(--kr-mint);margin:10px 0}
+#koala-remote-concept progress::-webkit-progress-bar{background:#35483d;border-radius:9px}#koala-remote-concept progress::-webkit-progress-value{background:#8ecead;border-radius:9px}
+#koala-remote-concept .kr-xp-line{display:flex;justify-content:space-between;font-size:10px;color:var(--kr-muted)}
+#koala-remote-concept #kr-grove>h3{font-size:16px;margin:22px 0 10px}
+#koala-remote-concept #kr-mastery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#koala-remote-concept .kr-mastery-row{padding:12px;background:var(--kr-panel);border-radius:13px}
+#koala-remote-concept .kr-mastery-row>div:first-child{display:flex;justify-content:space-between;gap:5px;font-size:11px}
+#koala-remote-concept .kr-mastery-row>div:first-child>span{white-space:nowrap;color:var(--kr-gold)}
+#koala-remote-concept .kr-mastery-row>small{font-size:10px;line-height:1.4;display:block;min-height:28px;margin-top:6px;color:var(--kr-muted)}
+#koala-remote-concept .kr-mastery-row .kr-xp-line{font-size:9px;gap:4px}
+#koala-remote-concept #kr-activity{padding:0;list-style:none}
+#koala-remote-concept #kr-activity li{padding:13px 0;border-bottom:1px solid var(--kr-line);font-size:12px}
+#koala-remote-concept #kr-activity time{float:right;font-size:10px;color:var(--kr-muted)}
+#koala-remote-concept #kr-activity small{display:block;margin-top:6px;font-size:10px;color:var(--kr-muted)}
+#koala-remote-concept .kr-level-up{position:fixed;bottom:max(86px,calc(env(safe-area-inset-bottom) + 78px));left:12px;right:12px;max-width:440px;margin:auto;z-index:8;pointer-events:none;background:#18271ff5;border:1px solid #e6be69;border-radius:20px;padding:14px;box-shadow:0 8px 40px #0007;display:flex;gap:10px;align-items:center}
+#koala-remote-concept .kr-level-up[hidden]{display:none}
+#koala-remote-concept .kr-level-up img{width:82px;height:90px;object-fit:contain;border-radius:12px}
+#koala-remote-concept .kr-level-up small{font-size:11px;color:var(--kr-mint);display:block}
+#koala-remote-concept .kr-level-up strong{display:block;font-size:28px;color:var(--kr-gold)}
+#koala-remote-concept .kr-level-up span{font-size:12px;font-weight:700}#koala-remote-concept .kr-level-up p{font-size:10px;color:var(--kr-muted);margin:5px 0 0}
+#koala-remote-concept .kr-level-up.is-celebrating{animation:kr-level-pop 1.7s both}
+@keyframes kr-level-pop{0%{transform:translateY(20px) scale(.85);opacity:0}15%{transform:translateY(0) scale(1.03);opacity:1}28%,85%{transform:scale(1);opacity:1}100%{transform:translateY(-8px);opacity:0}}
+#koala-remote-concept .kr-reaction[data-tier]:not([data-tier="0"])::after{content:'❧';position:absolute;inset:8px;border:1px dashed #8ecead;border-radius:50%;color:#8ecead;transform:rotate(-14deg);pointer-events:none}
+#koala-remote-concept .kr-reaction[data-tier="2"]::after{content:'✦';border-color:#e6be69;color:#e6be69}
+#koala-remote-concept .kr-reaction[data-tier="3"]::after{content:'✦ ✦';border:2px solid #e6be69;color:#e6be69}
+#koala-remote-concept .kr-reaction[data-tier="4"]::after{content:'✦ ☾ ✦';border:2px solid #bba6e6;color:#bba6e6}
+#koala-remote-concept .kr-reaction.is-playing[data-tier]:not([data-tier="0"])::after{animation:kr-mastery-orbit .6s linear infinite}
+@keyframes kr-mastery-orbit{to{transform:rotate(346deg)}}
+#koala-remote-concept .kr-level-up.is-reduced{animation:none}
+@media(prefers-reduced-motion:reduce){#koala-remote-concept .kr-level-up.is-celebrating,#koala-remote-concept .kr-reaction.is-playing[data-tier]::after{animation:none}}
+
+#koala-remote-concept .kr-reaction[data-action="basketball"][data-tier="2"]::after,#koala-remote-concept .kr-reaction[data-action="basketball"][data-tier="3"]::after,#koala-remote-concept .kr-reaction[data-action="basketball"][data-tier="4"]::after{content:'🏀 ✦ 🏀'}
+#koala-remote-concept .kr-reaction[data-action="battle"][data-tier="2"]::after,#koala-remote-concept .kr-reaction[data-action="battle"][data-tier="3"]::after,#koala-remote-concept .kr-reaction[data-action="battle"][data-tier="4"]::after{content:'✦ BONK ✦';font-size:12px}
+#koala-remote-concept .kr-reaction[data-action="focus"][data-tier="2"]::after,#koala-remote-concept .kr-reaction[data-action="focus"][data-tier="3"]::after{content:'{ ✦ }'}
+#koala-remote-concept .kr-reaction[data-action="notes"][data-tier="2"]::after,#koala-remote-concept .kr-reaction[data-action="notes"][data-tier="3"]::after{content:'✉ ✦ ✉'}
+
+#koala-remote-concept .kr-level-up[data-scope="player"]::before{content:'👑';position:absolute;left:70px;top:2px;font-size:23px;transform:rotate(14deg)}
+#koala-remote-concept .kr-level-up[data-scope="player"]{border-color:#bba6e6}
